@@ -1,0 +1,292 @@
+/*
+Theme Name: CodeQuell
+Theme URI: 
+Author: CodeQuell.ch - Andrea Baumann
+Author URI: http://codequell.ch/
+Description: Theme für CodeQuell.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: ad optima
+This theme, like WordPress, is licensed under the GPL.
+*/
+
+/**
+ * Beginn: Globals
+ * ------------------------------------------------------------------
+ **/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    height: 100%;
+}
+body {
+    /* border: 2px solid orange; */
+    font-family: 'Karla', 'Arial', sans-serif;
+    font-size: 140%;
+}
+/**
+ * Ende: Globals
+ * ------------------------------------------------------------------
+ **/
+
+/* Versuch */
+.prev.slick-arrow {
+    left: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4rem;
+    cursor: pointer;
+    border: 1px solid green;
+}
+.next.slick-arrow {
+    right: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4rem;
+    cursor: pointer;
+    border: 1px solid blue;
+}
+
+span.slider-prev.js-slick-prev.direct-prev {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    opacity: 0.8;
+    z-index: 100;
+    transform: translate(-50%, -50%);
+    border: 1px solid yellow;
+}
+span.slider-prev.js-slick-prev.direct-prev:hover {
+    /*border-left-color: rgba(253, 251, 247, .5);*/
+    /*border-left-width: 4rem;*/
+  
+/*
+  width: 0;
+  height: 0;
+border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  border-left: 100px solid #00ff00;*/
+  /*border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid #00ff00;*/
+}
+span.slider-next.js-slick-next.direct-next {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    opacity: 0.8;
+    z-index: 100;
+    transform: translate(-50%, -50%);
+}
+
+.direct-prev {
+display: block;
+    position: relative;
+    width: 2rem;
+    height: 2re;
+    border: 1px solid transparent;
+    t: ;
+    background: none;
+    opacity: 0.4;
+    cursor: pointer;
+    transition: opacity 0.4s, border 0.8s;
+}
+
+/**
+ * transform: rotate(): drehen
+ * transform: skew(): Verschieben. Macht aus einen Rechteck einen Rhombus
+**/
+.direct-prev:after {
+    content: "";
+  transform: rotate(225deg) skew(20deg, 20deg);
+    border-color: #37302f;
+    background: green;
+    /*opacity: 1;*/
+    /*border: 1px solid red;*/
+    
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    border-width: 3px 3px 0 0;
+    border-style: solid;
+    border-color: #000;
+    transition: transform 0.4s, border 0.4s;
+    box-sizing: border-box;
+}
+
+/*.direct-prev:before {
+  content:attr(href);
+}*/
+.direct-prev .invisible {
+    display: none;
+}
+.invisible {
+    position: absolute;
+    left: -9999em;
+}
+/* Versuch */
+
+/*
+li.prev.slick-arrow {
+    border: 1px solid green;
+}
+li.next.slick-arrow {
+    border: 1px solid blue;
+}
+
+.paginator{
+ border: 1px solid red;
+  position: relative;
+  float: right;
+  margin-bottom: 20px;
+
+  li{
+      border: 1px solid green;
+    margin-top: 20px;
+    position: relative;
+    float: left;
+
+    margin-right: 20px;
+
+    &.prev{
+      display: block;
+      height: 20px;
+      width: 20px;
+    
+        background: yellow;
+    }
+
+    &.next{
+      display: block;
+      height: 20px;
+      width: 20px;
+
+        background: green;
+    }
+  }
+}
+*/
+
+/**
+ * Beginn: WordPress Core-Styles (Muessen im style.css enthalten sein)
+ * ------------------------------------------------------------------
+ **/
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+	background-color: #eee;
+	clip: auto !important;
+	clip-path: none;
+	color: #444;
+	display: block;
+	font-size: 1em;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+	/* Above WP toolbar. */
+}
+/**
+ * Ende: WordPress Core-Styles (Muessen im style.css enthalten sein)
+ * ------------------------------------------------------------------
+ **/
